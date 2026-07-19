@@ -21,8 +21,6 @@ func add_item(item: ItemData, count: int = 1) -> bool:
 				s.quantity = count
 				PlayerHud.inventory_shown.emit()
 				print("new item added: ", s.item_data.name)
-				for x in slots:
-					print(x.quantity, x.item_data)
 				return true
 		else:
 			var new = SlotData.new()
@@ -52,7 +50,16 @@ func slot_changed() -> void:
 func use_item(item: ItemData, count: int = 1) -> bool:
 	for s in slots:
 		if s:
-			if s.item_data == item && s.quantity >= count:
-				s.quantity -= count
-				return true
+			if s.item_data == item:
+				if s.quantity >= count:
+					s.quantity -= count
+					print(item.name, " removed")
+					return true
+	print("use_item failed!")
 	return false
+
+func remove_item(item: ItemData) -> void:
+	for s in slots:
+		if s.item_data == item:
+			s.quantity -= 1
+			print("gay")

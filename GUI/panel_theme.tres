@@ -1,10 +1,9 @@
 [gd_resource type="Theme" format=3 uid="uid://xavw04atwuaq"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5pwbj"]
-load_path = "res://.godot/imported/TravelBook_Spritesheet_v1.png-af3dcc418eb5ec6d3738d8967f93899e.ctex"
+[ext_resource type="Texture2D" uid="uid://r06t2p6h28pa" path="res://GUI/sprites/TravelBook_Spritesheet_v1.png" id="1_v3olp"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_v3olp"]
-atlas = SubResource("CompressedTexture2D_5pwbj")
+[sub_resource type="AtlasTexture" id="AtlasTexture_jhjla"]
+atlas = ExtResource("1_v3olp")
 region = Rect2(64, 32, 224, 160)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kiypo"]
@@ -12,7 +11,7 @@ content_margin_left = 8.0
 content_margin_top = 8.0
 content_margin_right = 8.0
 content_margin_bottom = 8.0
-texture = SubResource("AtlasTexture_v3olp")
+texture = SubResource("AtlasTexture_jhjla")
 texture_margin_left = 12.0
 texture_margin_top = 12.0
 texture_margin_right = 12.0

@@ -37,6 +37,8 @@ folder_colors={
 "res://00_Globals/": "red",
 "res://Components/": "purple",
 "res://GUI/": "green",
+"res://GUI/crafting/": "orange",
+"res://GUI/inventory/": "orange",
 "res://Levels/": "teal",
 "res://Player/": "orange",
 "res://Props/": "blue",

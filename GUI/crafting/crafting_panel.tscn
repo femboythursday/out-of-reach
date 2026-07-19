@@ -4,6 +4,10 @@
 [ext_resource type="Script" uid="uid://bubx4cr7m4jsp" path="res://GUI/draggable_panel.gd" id="2_7w20x"]
 [ext_resource type="FontFile" uid="uid://dteh286g6cn7t" path="res://GUI/fonts/alagard.ttf" id="3_ix0wa"]
 [ext_resource type="PackedScene" uid="uid://chlepjt2juyx8" path="res://GUI/inventory/inv_slot.tscn" id="4_7w20x"]
+[ext_resource type="Script" uid="uid://ccagn1723aou" path="res://GUI/crafting/scripts/crafting_ui.gd" id="4_ix0wa"]
+[ext_resource type="Script" uid="uid://edmqwfwnojhw" path="res://GUI/crafting/scripts/item_recipe.gd" id="5_jhjla"]
+[ext_resource type="Resource" uid="uid://bdsqpgdqu0u7" path="res://GUI/crafting/recipes/rope_recipe.tres" id="6_ej4ty"]
+[ext_resource type="Resource" uid="uid://ccnf7ekf71c36" path="res://GUI/crafting/recipes/wood_plank_recipe.tres" id="7_ib275"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4geva"]
 
@@ -29,6 +33,7 @@ offset_right = 172.0
 offset_bottom = 115.5
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme = ExtResource("1_xrkdr")
 script = ExtResource("2_7w20x")
 panel_type = 1
@@ -52,60 +57,59 @@ texture_normal = SubResource("AtlasTexture_xudqb")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="." unique_id=843766885]
-visible = false
+[node name="CraftingUI" type="HBoxContainer" parent="." unique_id=608277043]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_ix0wa")
-text = "Crafting"
-horizontal_alignment = 1
+mouse_filter = 2
+script = ExtResource("4_ix0wa")
+recipe_array = Array[ExtResource("5_jhjla")]([ExtResource("6_ej4ty"), ExtResource("7_ib275")])
 
-[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=608277043]
-layout_mode = 2
-
-[node name="Tree" type="Tree" parent="HBoxContainer" unique_id=960736495]
+[node name="Tree" type="Tree" parent="CraftingUI" unique_id=960736495]
 custom_minimum_size = Vector2(128, 0)
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=511624420]
+[node name="VBoxContainer" type="VBoxContainer" parent="CraftingUI" unique_id=511624420]
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 2
 
-[node name="TitleLabel" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=2142353643]
+[node name="TitleLabel" type="Label" parent="CraftingUI/VBoxContainer" unique_id=2142353643]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_ix0wa")
 text = "Item Name"
 horizontal_alignment = 1
 
-[node name="ItemTexture" type="TextureRect" parent="HBoxContainer/VBoxContainer" unique_id=1919643424]
+[node name="ItemTexture" type="TextureRect" parent="CraftingUI/VBoxContainer" unique_id=1919643424]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
+mouse_filter = 2
 texture = SubResource("CompressedTexture2D_xrkdr")
 stretch_mode = 5
 
-[node name="GridContainer" type="GridContainer" parent="HBoxContainer/VBoxContainer" unique_id=787283551]
+[node name="MaterialsContainer" type="GridContainer" parent="CraftingUI/VBoxContainer" unique_id=787283551]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 3
+mouse_filter = 2
 columns = 5
 
-[node name="InvSlot" parent="HBoxContainer/VBoxContainer/GridContainer" unique_id=578357033 instance=ExtResource("4_7w20x")]
+[node name="InvSlot" parent="CraftingUI/VBoxContainer/MaterialsContainer" unique_id=578357033 instance=ExtResource("4_7w20x")]
 layout_mode = 2
 
-[node name="InvSlot2" parent="HBoxContainer/VBoxContainer/GridContainer" unique_id=283509351 instance=ExtResource("4_7w20x")]
+[node name="InvSlot2" parent="CraftingUI/VBoxContainer/MaterialsContainer" unique_id=283509351 instance=ExtResource("4_7w20x")]
 layout_mode = 2
 
-[node name="InvSlot3" parent="HBoxContainer/VBoxContainer/GridContainer" unique_id=143130214 instance=ExtResource("4_7w20x")]
+[node name="InvSlot3" parent="CraftingUI/VBoxContainer/MaterialsContainer" unique_id=143130214 instance=ExtResource("4_7w20x")]
 layout_mode = 2
 
-[node name="InvSlot4" parent="HBoxContainer/VBoxContainer/GridContainer" unique_id=371615045 instance=ExtResource("4_7w20x")]
+[node name="InvSlot4" parent="CraftingUI/VBoxContainer/MaterialsContainer" unique_id=371615045 instance=ExtResource("4_7w20x")]
 layout_mode = 2
 
-[node name="InvSlot5" parent="HBoxContainer/VBoxContainer/GridContainer" unique_id=1629334313 instance=ExtResource("4_7w20x")]
+[node name="InvSlot5" parent="CraftingUI/VBoxContainer/MaterialsContainer" unique_id=1629334313 instance=ExtResource("4_7w20x")]
 layout_mode = 2
 
-[node name="Button" type="Button" parent="HBoxContainer/VBoxContainer" unique_id=384236262]
+[node name="CraftButton" type="Button" parent="CraftingUI/VBoxContainer" unique_id=384236262]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_ix0wa")
 text = "Craft"

@@ -11,6 +11,7 @@ enum Tools {
 const DIR_4: Array = [Vector2.RIGHT, Vector2.DOWN, Vector2.LEFT, Vector2.UP]
 
 static var main: Player
+static var inventory: InvData = preload("uid://cwnsslw6xg6hr")
 
 @onready var anim: AnimationPlayer = $AnimationPlayer
 @onready var state_machine: PlayerStateMachine = $StateMachine

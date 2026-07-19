@@ -59,6 +59,8 @@ position = Vector2(-240, 160)
 position = Vector2(-40, 168)
 
 [node name="Flax" type="Node2D" parent="." unique_id=2057849798]
+z_as_relative = false
+y_sort_enabled = true
 
 [node name="Flax" parent="Flax" unique_id=1875662747 instance=ExtResource("6_umiw3")]
 position = Vector2(-232, 48)

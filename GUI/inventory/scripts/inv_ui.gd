@@ -22,10 +22,6 @@ func update_inv() -> void:
 		var new_slot: InvSlotUI = INV_SLOT.instantiate()
 		add_child(new_slot)
 		new_slot.set_slot_data(s)
-		if s.item_data:
-			print("update_inv: " + s.item_data.name)
-		else:
-			print("update_inv: slot contains no item")
 
 func on_inv_changed() -> void:
 	update_inv()
