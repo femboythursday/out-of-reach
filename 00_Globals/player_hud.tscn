@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://vivdkqkdoljo"]
+
+[ext_resource type="Script" uid="uid://bg3v05m5afwdy" path="res://00_Globals/player_hud.gd" id="1_en8fo"]
+[ext_resource type="Texture2D" uid="uid://dfcqbo5dcwhi1" path="res://GUI/sprites/fa99.png" id="5_vql8t"]
+[ext_resource type="Texture2D" uid="uid://dl8h1wdhabxpu" path="res://GUI/sprites/fa1.png" id="6_4geva"]
+[ext_resource type="PackedScene" uid="uid://dq6d6833th8ll" path="res://GUI/inventory/inventory_panel.tscn" id="6_dqwrq"]
+[ext_resource type="PackedScene" uid="uid://c0cpuidrop0bm" path="res://GUI/crafting/crafting_panel.tscn" id="7_fo3ry"]
+[ext_resource type="Texture2D" uid="uid://bn8he1dp63ifc" path="res://GUI/sprites/fa2.png" id="7_nqswu"]
+[ext_resource type="Texture2D" uid="uid://c7dm1phr1kf14" path="res://GUI/sprites/fa126.png" id="8_sg3wf"]
+
+[node name="PlayerHUD" type="CanvasLayer" unique_id=500084994]
+process_mode = 3
+script = ExtResource("1_en8fo")
+
+[node name="Control" type="Control" parent="." unique_id=1114321511]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="MenuButton" type="MenuButton" parent="Control" unique_id=257139209]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -24.0
+offset_top = -24.0
+grow_horizontal = 0
+grow_vertical = 0
+icon = ExtResource("5_vql8t")
+item_count = 3
+popup/item_0/text = "Inventory"
+popup/item_0/icon = ExtResource("6_4geva")
+popup/item_0/id = 0
+popup/item_1/text = "Settings"
+popup/item_1/icon = ExtResource("7_nqswu")
+popup/item_1/id = 1
+popup/item_2/text = "Crafting"
+popup/item_2/icon = ExtResource("8_sg3wf")
+popup/item_2/id = 2
+
+[node name="InventoryPanel" parent="Control" unique_id=1894795615 instance=ExtResource("6_dqwrq")]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 108.0
+offset_bottom = 55.0
+
+[node name="CraftingPanel" parent="Control" unique_id=1127279965 instance=ExtResource("7_fo3ry")]
+layout_mode = 1

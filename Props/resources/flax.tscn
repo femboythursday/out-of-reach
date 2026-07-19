@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://ddq80qx4kqexx"]
+
+[ext_resource type="PackedScene" uid="uid://daeyorya54gg2" path="res://Components/hurt_box.tscn" id="1_phe4n"]
+[ext_resource type="Script" uid="uid://ch3fprk3hw3jh" path="res://Props/resources/flax.gd" id="1_vcvby"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hvgbo"]
+load_path = "res://.godot/imported/Vegetation.png-656b2a8276e605664b3e2362edde1563.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_phe4n"]
+load_path = "res://.godot/imported/Vegetation.png-656b2a8276e605664b3e2362edde1563.ctex"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xudqb"]
+radius = 6.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_563m5"]
+radius = 16.124516
+
+[node name="Flax" type="StaticBody2D" unique_id=1875662747]
+script = ExtResource("1_vcvby")
+
+[node name="Baby" type="Sprite2D" parent="." unique_id=2127336372]
+position = Vector2(0, -7)
+texture = SubResource("CompressedTexture2D_hvgbo")
+region_enabled = true
+region_rect = Rect2(64, 144, 16, 16)
+
+[node name="Grown" type="Sprite2D" parent="." unique_id=1869605990]
+position = Vector2(0, -8)
+texture = SubResource("CompressedTexture2D_phe4n")
+region_enabled = true
+region_rect = Rect2(80, 144, 32, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2067836525]
+position = Vector2(0, -6)
+shape = SubResource("CircleShape2D_xudqb")
+
+[node name="HurtBox" parent="." unique_id=2068142435 instance=ExtResource("1_phe4n")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=1633549786]
+position = Vector2(0, -6)
+shape = SubResource("CircleShape2D_563m5")
+debug_color = Color(0.9531439, 3.85046e-07, 0.5575456, 0.41960785)
+
+[node name="Timer" type="Timer" parent="." unique_id=1418763292]
+one_shot = true

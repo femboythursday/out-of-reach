@@ -1,0 +1,111 @@
+[gd_scene format=3 uid="uid://c0cpuidrop0bm"]
+
+[ext_resource type="Theme" uid="uid://xavw04atwuaq" path="res://GUI/panel_theme.tres" id="1_xrkdr"]
+[ext_resource type="Script" uid="uid://bubx4cr7m4jsp" path="res://GUI/draggable_panel.gd" id="2_7w20x"]
+[ext_resource type="FontFile" uid="uid://dteh286g6cn7t" path="res://GUI/fonts/alagard.ttf" id="3_ix0wa"]
+[ext_resource type="PackedScene" uid="uid://chlepjt2juyx8" path="res://GUI/inventory/inv_slot.tscn" id="4_7w20x"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4geva"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qigre"]
+load_path = "res://.godot/imported/TravelBook_Spritesheet_v1.png-af3dcc418eb5ec6d3738d8967f93899e.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xudqb"]
+atlas = SubResource("CompressedTexture2D_qigre")
+region = Rect2(256, 688, 16, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xrkdr"]
+load_path = "res://.godot/imported/fa203.png-c874f467eaf72656563c3f0e5877c7b9.ctex"
+
+[node name="CraftingPanel" type="PanelContainer" unique_id=1127279965 node_paths=PackedStringArray("drag_button", "close_button")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -172.0
+offset_top = -115.5
+offset_right = 172.0
+offset_bottom = 115.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_xrkdr")
+script = ExtResource("2_7w20x")
+panel_type = 1
+drag_button = NodePath("DragButton")
+close_button = NodePath("CloseButton")
+
+[node name="DragButton" type="Button" parent="." unique_id=1519974488]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4geva")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_4geva")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_4geva")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4geva")
+
+[node name="CloseButton" type="TextureButton" parent="." unique_id=972762213]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+offset_transform_enabled = true
+texture_normal = SubResource("AtlasTexture_xudqb")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="." unique_id=843766885]
+visible = false
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_ix0wa")
+text = "Crafting"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=608277043]
+layout_mode = 2
+
+[node name="Tree" type="Tree" parent="HBoxContainer" unique_id=960736495]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=511624420]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="TitleLabel" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=2142353643]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_ix0wa")
+text = "Item Name"
+horizontal_alignment = 1
+
+[node name="ItemTexture" type="TextureRect" parent="HBoxContainer/VBoxContainer" unique_id=1919643424]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+texture = SubResource("CompressedTexture2D_xrkdr")
+stretch_mode = 5
+
+[node name="GridContainer" type="GridContainer" parent="HBoxContainer/VBoxContainer" unique_id=787283551]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+columns = 5
+
+[node name="InvSlot" parent="HBoxContainer/VBoxContainer/GridContainer" unique_id=578357033 instance=ExtResource("4_7w20x")]
+layout_mode = 2
+
+[node name="InvSlot2" parent="HBoxContainer/VBoxContainer/GridContainer" unique_id=283509351 instance=ExtResource("4_7w20x")]
+layout_mode = 2
+
+[node name="InvSlot3" parent="HBoxContainer/VBoxContainer/GridContainer" unique_id=143130214 instance=ExtResource("4_7w20x")]
+layout_mode = 2
+
+[node name="InvSlot4" parent="HBoxContainer/VBoxContainer/GridContainer" unique_id=371615045 instance=ExtResource("4_7w20x")]
+layout_mode = 2
+
+[node name="InvSlot5" parent="HBoxContainer/VBoxContainer/GridContainer" unique_id=1629334313 instance=ExtResource("4_7w20x")]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="HBoxContainer/VBoxContainer" unique_id=384236262]
+layout_mode = 2
+text = "Craft"

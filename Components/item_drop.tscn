@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bah47wcua4pyr"]
+
+[ext_resource type="Script" uid="uid://d3dri47pcvoq6" path="res://Components/item_drop.gd" id="1_nmoag"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xudqb"]
+radius = 8.0
+
+[node name="ItemDrop" type="Node2D" unique_id=579991941]
+script = ExtResource("1_nmoag")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1414519653]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=102907727]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=297691371]
+shape = SubResource("CircleShape2D_xudqb")

@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://4umowm1swx14"]
+
+[ext_resource type="Texture2D" uid="uid://tl557btvw4s3" path="res://Props/resources/Size_03.png" id="1_jer8k"]
+[ext_resource type="Script" uid="uid://dumoy7ururifd" path="res://Props/resources/pine_tree.gd" id="1_onwqm"]
+[ext_resource type="PackedScene" uid="uid://daeyorya54gg2" path="res://Components/hurt_box.tscn" id="2_i8k74"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_563m5"]
+atlas = ExtResource("1_jer8k")
+region = Rect2(112, 144, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xudqb"]
+atlas = ExtResource("1_jer8k")
+region = Rect2(0, 80, 48, 80)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i8k74"]
+size = Vector2(6, 7)
+
+[sub_resource type="Animation" id="Animation_jer8k"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Tree:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_i8k74"]
+resource_name = "chopped"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Tree:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_onwqm"]
+resource_name = "grown"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Tree:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5uwwy"]
+_data = {
+&"RESET": SubResource("Animation_jer8k"),
+&"chopped": SubResource("Animation_i8k74"),
+&"grown": SubResource("Animation_onwqm")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xudqb"]
+radius = 7.071068
+
+[node name="PineTree" type="StaticBody2D" unique_id=327685354]
+z_as_relative = false
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("1_onwqm")
+
+[node name="Stump" type="Sprite2D" parent="." unique_id=1994887313]
+z_as_relative = false
+position = Vector2(0, 2)
+texture = SubResource("AtlasTexture_563m5")
+
+[node name="Tree" type="Sprite2D" parent="." unique_id=1767095716]
+z_as_relative = false
+position = Vector2(0, -30)
+texture = SubResource("AtlasTexture_xudqb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2088399006]
+position = Vector2(0, 6.5)
+shape = SubResource("RectangleShape2D_i8k74")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=467649115]
+libraries/ = SubResource("AnimationLibrary_5uwwy")
+autoplay = &"grown"
+
+[node name="HurtBox" parent="." unique_id=2068142435 instance=ExtResource("2_i8k74")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=1997758617]
+position = Vector2(0, 7)
+shape = SubResource("CircleShape2D_xudqb")
+debug_color = Color(0.9513474, 2.5990605e-06, 0.5665329, 0.41960785)

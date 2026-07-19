@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemRecipe" format=3 uid="uid://ccnf7ekf71c36"]
+
+[ext_resource type="Script" uid="uid://pyevnfclonq6" path="res://GUI/inventory/scripts/item_data.gd" id="1_hajin"]
+[ext_resource type="Resource" uid="uid://bqs6sbkrakclj" path="res://GUI/inventory/items/ItemData/pine_wood.tres" id="2_bjtg6"]
+[ext_resource type="Resource" uid="uid://1rrvfmrc6tmh" path="res://GUI/inventory/items/ItemData/wood_plank.tres" id="3_kikfv"]
+[ext_resource type="Script" uid="uid://edmqwfwnojhw" path="res://GUI/crafting/scripts/item_recipe.gd" id="4_avv47"]
+
+[resource]
+script = ExtResource("4_avv47")
+recipe_name = "Wood Plank"
+recipe_product = ExtResource("3_kikfv")
+recipe_materials = Array[ExtResource("1_hajin")]([ExtResource("2_bjtg6")])
+metadata/_custom_type_script = "uid://edmqwfwnojhw"
