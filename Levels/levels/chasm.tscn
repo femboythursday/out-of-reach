@@ -31,6 +31,8 @@ tile_map_data = PackedByteArray("AADu////AQAAAA4AAADv////AQABAA4AAADv/wAAAQABAAk
 tile_set = ExtResource("1_4o8kf")
 
 [node name="Trees" type="Node2D" parent="." unique_id=689342602]
+z_as_relative = false
+y_sort_enabled = true
 
 [node name="PineTree" parent="Trees" unique_id=327685354 instance=ExtResource("5_ijb8j")]
 position = Vector2(-72, 144)
