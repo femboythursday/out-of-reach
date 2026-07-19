@@ -87,6 +87,12 @@ mouse_filter = 2
 texture = SubResource("CompressedTexture2D_xrkdr")
 stretch_mode = 5
 
+[node name="TitleLabel2" type="Label" parent="CraftingUI/VBoxContainer" unique_id=1694945640]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_ix0wa")
+text = "Requires:"
+horizontal_alignment = 1
+
 [node name="MaterialsContainer" type="GridContainer" parent="CraftingUI/VBoxContainer" unique_id=787283551]
 layout_mode = 2
 size_flags_horizontal = 4

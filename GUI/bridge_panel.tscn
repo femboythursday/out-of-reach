@@ -1,0 +1,149 @@
+[gd_scene format=3 uid="uid://cc6bhxrmndgyd"]
+
+[ext_resource type="Theme" uid="uid://xavw04atwuaq" path="res://GUI/panel_theme.tres" id="1_0sq21"]
+[ext_resource type="Script" uid="uid://bubx4cr7m4jsp" path="res://GUI/draggable_panel.gd" id="2_jrqb3"]
+[ext_resource type="FontFile" uid="uid://dteh286g6cn7t" path="res://GUI/fonts/alagard.ttf" id="3_qaht5"]
+[ext_resource type="Script" uid="uid://byk5mqpu1tbbq" path="res://GUI/fix_button.gd" id="4_08xw5"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jrx5n"]
+load_path = "res://.godot/imported/TravelBook_Spritesheet_v1.png-af3dcc418eb5ec6d3738d8967f93899e.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_563m5"]
+atlas = SubResource("CompressedTexture2D_jrx5n")
+region = Rect2(64, 32, 224, 160)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xudqb"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+texture = SubResource("AtlasTexture_563m5")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4geva"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qigre"]
+load_path = "res://.godot/imported/TravelBook_Spritesheet_v1.png-af3dcc418eb5ec6d3738d8967f93899e.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xudqb"]
+atlas = SubResource("CompressedTexture2D_qigre")
+region = Rect2(256, 688, 16, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_08xw5"]
+load_path = "res://.godot/imported/TravelBook_Spritesheet_v1.png-af3dcc418eb5ec6d3738d8967f93899e.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kb4rc"]
+atlas = SubResource("CompressedTexture2D_08xw5")
+region = Rect2(64, 288, 32, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0sq21"]
+texture = SubResource("AtlasTexture_kb4rc")
+texture_margin_left = 3.0
+texture_margin_top = 3.0
+texture_margin_right = 3.0
+texture_margin_bottom = 3.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jrqb3"]
+load_path = "res://.godot/imported/fa203.png-c874f467eaf72656563c3f0e5877c7b9.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_trwdy"]
+load_path = "res://.godot/imported/rope.png-05da3da03a97e6e140365302383cc48a.ctex"
+
+[node name="BridgePanel" type="PanelContainer" unique_id=1894795615 node_paths=PackedStringArray("drag_button", "close_button")]
+custom_minimum_size = Vector2(108, 55)
+offset_left = 187.0
+offset_top = 72.0
+offset_right = 401.0
+offset_bottom = 170.0
+mouse_filter = 2
+theme = ExtResource("1_0sq21")
+theme_override_styles/panel = SubResource("StyleBoxTexture_xudqb")
+script = ExtResource("2_jrqb3")
+drag_button = NodePath("DragButton")
+close_button = NodePath("CloseButton")
+
+[node name="DragButton" type="Button" parent="." unique_id=1650174691]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4geva")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_4geva")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_4geva")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4geva")
+
+[node name="CloseButton" type="TextureButton" parent="." unique_id=1962333611]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+offset_transform_enabled = true
+texture_normal = SubResource("AtlasTexture_xudqb")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1727936168]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1048612041]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_qaht5")
+text = "Bridge to Torga Town"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer" unique_id=689609266]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("3_qaht5")
+theme_override_font_sizes/font_size = 8
+text = "materials requiredto fix the bridge:"
+horizontal_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer" unique_id=2080551944]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 2
+mouse_filter = 2
+columns = 2
+
+[node name="Planks" type="PanelContainer" parent="VBoxContainer/GridContainer" unique_id=996029985]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_0sq21")
+
+[node name="ItemIcon" type="TextureRect" parent="VBoxContainer/GridContainer/Planks" unique_id=990226878]
+layout_mode = 2
+texture = SubResource("CompressedTexture2D_jrqb3")
+stretch_mode = 2
+
+[node name="QuantityLabel" type="Label" parent="VBoxContainer/GridContainer/Planks" unique_id=1409437735]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("3_qaht5")
+theme_override_font_sizes/font_size = 8
+text = "3"
+horizontal_alignment = 2
+
+[node name="Rope" type="PanelContainer" parent="VBoxContainer/GridContainer" unique_id=1835553388]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_0sq21")
+
+[node name="ItemIcon" type="TextureRect" parent="VBoxContainer/GridContainer/Rope" unique_id=929119633]
+layout_mode = 2
+texture = SubResource("CompressedTexture2D_trwdy")
+stretch_mode = 2
+
+[node name="QuantityLabel" type="Label" parent="VBoxContainer/GridContainer/Rope" unique_id=1680393900]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("3_qaht5")
+theme_override_font_sizes/font_size = 8
+text = "3"
+horizontal_alignment = 2
+
+[node name="FixButton" type="Button" parent="VBoxContainer" unique_id=59135182]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("3_qaht5")
+text = "FIX"
+script = ExtResource("4_08xw5")

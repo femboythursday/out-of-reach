@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://c6j882a0v0tjl"]
+
+[ext_resource type="Script" uid="uid://cmbwx0j7pqe2o" path="res://Props/bridge.gd" id="1_iqnao"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_iqnao"]
+load_path = "res://.godot/imported/Bridges.png-f51401485b3ca13a6070d275d02da12b.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xudqb"]
+atlas = SubResource("CompressedTexture2D_iqnao")
+region = Rect2(272, 517, 112, 49)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r8g60"]
+atlas = SubResource("CompressedTexture2D_iqnao")
+region = Rect2(272, 160, 128, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xudqb"]
+size = Vector2(39, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_563m5"]
+size = Vector2(181, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iqnao"]
+size = Vector2(161, 6)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xudqb"]
+radius = 24.0
+
+[node name="Bridge" type="StaticBody2D" unique_id=1978594222]
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("1_iqnao")
+
+[node name="Broken" type="NinePatchRect" parent="." unique_id=191072150]
+offset_top = -16.0
+offset_right = 192.0
+offset_bottom = 24.0
+texture = SubResource("AtlasTexture_xudqb")
+patch_margin_left = 32
+patch_margin_right = 32
+axis_stretch_horizontal = 1
+
+[node name="Fixed" type="NinePatchRect" parent="." unique_id=1431312591]
+visible = false
+offset_top = -17.0
+offset_right = 192.0
+offset_bottom = 23.0
+texture = SubResource("AtlasTexture_r8g60")
+patch_margin_left = 32
+patch_margin_right = 32
+axis_stretch_horizontal = 1
+
+[node name="BlockedEntry" type="CollisionShape2D" parent="." unique_id=376921464]
+position = Vector2(23.5, -1.5)
+shape = SubResource("RectangleShape2D_xudqb")
+disabled = true
+
+[node name="Rails" type="CollisionShape2D" parent="." unique_id=350393546]
+position = Vector2(96.5, -4)
+shape = SubResource("RectangleShape2D_563m5")
+disabled = true
+
+[node name="Rails2" type="CollisionShape2D" parent="." unique_id=1082700255]
+position = Vector2(106.5, 14)
+shape = SubResource("RectangleShape2D_iqnao")
+disabled = true
+
+[node name="Area2D" type="Area2D" parent="." unique_id=870694938]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=458553161]
+position = Vector2(16, 0)
+shape = SubResource("CircleShape2D_xudqb")
+debug_color = Color(3.2247603e-06, 0.6478444, 0.20828703, 0.41960785)

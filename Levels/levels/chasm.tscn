@@ -3,6 +3,7 @@
 [ext_resource type="TileSet" uid="uid://d2hwblcxnukqt" path="res://Levels/tilesets/tile_set.tres" id="1_4o8kf"]
 [ext_resource type="Script" uid="uid://bjmejilo1f3i6" path="res://Levels/scripts/level_tilemap.gd" id="2_umiw3"]
 [ext_resource type="PackedScene" uid="uid://dmudjqsvyrt5s" path="res://Player/player.tscn" id="3_gbcne"]
+[ext_resource type="PackedScene" uid="uid://c6j882a0v0tjl" path="res://Props/bridge.tscn" id="3_r3mpw"]
 [ext_resource type="PackedScene" uid="uid://bxx2jv2ot403u" path="res://Levels/level_transition.tscn" id="4_r3mpw"]
 [ext_resource type="PackedScene" uid="uid://4umowm1swx14" path="res://Props/resources/pine_tree.tscn" id="5_ijb8j"]
 [ext_resource type="PackedScene" uid="uid://ddq80qx4kqexx" path="res://Props/resources/flax.tscn" id="6_umiw3"]
@@ -29,6 +30,11 @@ tile_set = ExtResource("1_4o8kf")
 [node name="Cave" type="TileMapLayer" parent="." unique_id=1348368670]
 tile_map_data = PackedByteArray("AADu////AQAAAA4AAADv////AQABAA4AAADv/wAAAQABAAkAAADw////AQACAA4AAADx////AgAAAAgAAAD1////AQAEAA4AAAD1/wAAAQAEAAkAAAD2////AQAFAA4AAADu//v/AQAAAAQAAADu//z/AQAAAAUAAADu//3/AQAAAAYAAADu//7/AQAAAAcAAADv//z/AQABAAUAAADv//3/AQABAAYAAADv//7/AQABAAcAAADw//z/AQACAAUAAADw//3/AQACAAYAAADw//7/AQACAAcAAADx//z/AQADAAUAAADx//3/AQADAAYAAADx//7/AgAAAAcAAADy//z/AQACAAUAAADy//3/AQACAAYAAADz//z/AQADAAUAAADz//3/AQADAAYAAAD0//z/AQADAAUAAAD0//3/AQADAAYAAAD1//z/AQAEAAUAAAD1//3/AQAEAAYAAAD1//7/AQAEAAcAAAD2//v/AQAFAAQAAAD2//z/AQAFAAUAAAD2//3/AQAFAAYAAAD2//7/AQAFAAcAAAD1//v/AQAEAAQAAADv//v/AQABAAQAAADw//v/AQACAAQAAADx//v/AQADAAQAAADy//v/AQACAAQAAADz//v/AQADAAQAAAD0//v/AQACAAQAAADy////AgABAAgAAADx/wAAAgAAAAkAAADy//7/AgABAAcAAADy/wAAAgABAAkAAADw/wAAAQACAAkAAADz/wAAAQACAAkAAAD0/wAAAQADAAkAAADz////AQACAA4AAAD0////AQADAA4AAADz//7/AQACAA4AAAD0//7/AQADAA4AAAA=")
 tile_set = ExtResource("1_4o8kf")
+
+[node name="Bridge" parent="." unique_id=1879993871 instance=ExtResource("3_r3mpw")]
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(-32, 88)
 
 [node name="Trees" type="Node2D" parent="." unique_id=689342602]
 z_as_relative = false

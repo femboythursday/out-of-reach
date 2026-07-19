@@ -62,4 +62,13 @@ func remove_item(item: ItemData) -> void:
 	for s in slots:
 		if s.item_data == item:
 			s.quantity -= 1
-			print("gay")
+			if s.quantity < 1:
+				s.item_data = null
+			print_slots()
+
+func print_slots() -> void:
+	for s in slots:
+		if s.item_data:
+			print(s.item_data.name, s.quantity)
+		else:
+			print("empty slot")
