@@ -1,0 +1,225 @@
+[gd_scene format=3 uid="uid://clhfhsov2csje"]
+
+[ext_resource type="Theme" uid="uid://xavw04atwuaq" path="res://GUI/panel_theme.tres" id="1_aka8n"]
+[ext_resource type="Script" uid="uid://bubx4cr7m4jsp" path="res://GUI/draggable_panel.gd" id="2_f8l65"]
+[ext_resource type="FontFile" uid="uid://dteh286g6cn7t" path="res://GUI/fonts/alagard.ttf" id="3_rber7"]
+[ext_resource type="PackedScene" uid="uid://6jasw7xuc8rc" path="res://GUI/link_button.tscn" id="4_aka8n"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jrx5n"]
+load_path = "res://.godot/imported/TravelBook_Spritesheet_v1.png-af3dcc418eb5ec6d3738d8967f93899e.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_563m5"]
+atlas = SubResource("CompressedTexture2D_jrx5n")
+region = Rect2(64, 32, 224, 160)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xudqb"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+texture = SubResource("AtlasTexture_563m5")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4geva"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qigre"]
+load_path = "res://.godot/imported/TravelBook_Spritesheet_v1.png-af3dcc418eb5ec6d3738d8967f93899e.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xudqb"]
+atlas = SubResource("CompressedTexture2D_qigre")
+region = Rect2(256, 688, 16, 16)
+
+[node name="CreditsPanel" type="PanelContainer" unique_id=1894795615 node_paths=PackedStringArray("drag_button", "close_button")]
+custom_minimum_size = Vector2(108, 55)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -107.0
+offset_top = -93.5
+offset_right = 107.0
+offset_bottom = 93.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("1_aka8n")
+theme_override_styles/panel = SubResource("StyleBoxTexture_xudqb")
+script = ExtResource("2_f8l65")
+panel_type = 4
+drag_button = NodePath("DragButton")
+close_button = NodePath("CloseButton")
+
+[node name="DragButton" type="Button" parent="." unique_id=1650174691]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4geva")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_4geva")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_4geva")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4geva")
+
+[node name="CloseButton" type="TextureButton" parent="." unique_id=1962333611]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+offset_transform_enabled = true
+texture_normal = SubResource("AtlasTexture_xudqb")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1727936168]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1048612041]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_rber7")
+text = "Credits"
+horizontal_alignment = 1
+
+[node name="Tiles" type="Label" parent="VBoxContainer" unique_id=689609266]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 1
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("3_rber7")
+theme_override_font_sizes/font_size = 8
+text = "Tiles"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer" unique_id=1114716223]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 2
+mouse_filter = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/VBoxContainer" unique_id=1527893466]
+layout_mode = 2
+
+[node name="LinkButton" parent="VBoxContainer/VBoxContainer/HBoxContainer" unique_id=1512672953 instance=ExtResource("4_aka8n")]
+layout_mode = 2
+link = "https://anokolisa.itch.io/"
+
+[node name="Name" type="Label" parent="VBoxContainer/VBoxContainer/HBoxContainer" unique_id=1878145433]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("3_rber7")
+theme_override_font_sizes/font_size = 8
+text = "Anokolisa"
+horizontal_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/VBoxContainer" unique_id=97689059]
+layout_mode = 2
+
+[node name="LinkButton" parent="VBoxContainer/VBoxContainer/HBoxContainer2" unique_id=2045987877 instance=ExtResource("4_aka8n")]
+layout_mode = 2
+link = "https://ventilatore.itch.io/"
+
+[node name="Name" type="Label" parent="VBoxContainer/VBoxContainer/HBoxContainer2" unique_id=1906834168]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("3_rber7")
+theme_override_font_sizes/font_size = 8
+text = "Ventilatore"
+horizontal_alignment = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer/VBoxContainer" unique_id=381824217]
+layout_mode = 2
+
+[node name="LinkButton" parent="VBoxContainer/VBoxContainer/HBoxContainer3" unique_id=791300041 instance=ExtResource("4_aka8n")]
+layout_mode = 2
+link = "https://free-game-assets.itch.io/"
+
+[node name="Name" type="Label" parent="VBoxContainer/VBoxContainer/HBoxContainer3" unique_id=939780059]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("3_rber7")
+theme_override_font_sizes/font_size = 8
+text = "Craftpix"
+horizontal_alignment = 1
+
+[node name="Icons" type="Label" parent="VBoxContainer" unique_id=437632268]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 1
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("3_rber7")
+theme_override_font_sizes/font_size = 8
+text = "Icons"
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer" unique_id=760602389]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 2
+mouse_filter = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/VBoxContainer2" unique_id=1773754038]
+layout_mode = 2
+
+[node name="LinkButton" parent="VBoxContainer/VBoxContainer2/HBoxContainer" unique_id=1845649318 instance=ExtResource("4_aka8n")]
+layout_mode = 2
+link = "https://clockworkraven.itch.io/"
+
+[node name="Name" type="Label" parent="VBoxContainer/VBoxContainer2/HBoxContainer" unique_id=290121570]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("3_rber7")
+theme_override_font_sizes/font_size = 8
+text = "Clockwork Raven"
+horizontal_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/VBoxContainer2" unique_id=573228009]
+layout_mode = 2
+
+[node name="LinkButton" parent="VBoxContainer/VBoxContainer2/HBoxContainer2" unique_id=1686549780 instance=ExtResource("4_aka8n")]
+layout_mode = 2
+link = "https://nikoichu.itch.io/"
+
+[node name="Name" type="Label" parent="VBoxContainer/VBoxContainer2/HBoxContainer2" unique_id=1315570544]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("3_rber7")
+theme_override_font_sizes/font_size = 8
+text = "Nikoichu"
+horizontal_alignment = 1
+
+[node name="Player" type="Label" parent="VBoxContainer" unique_id=240449763]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 1
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("3_rber7")
+theme_override_font_sizes/font_size = 8
+text = "Player"
+horizontal_alignment = 1
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="VBoxContainer" unique_id=1692346763]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 2
+mouse_filter = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/VBoxContainer3" unique_id=1110826565]
+layout_mode = 2
+
+[node name="LinkButton" parent="VBoxContainer/VBoxContainer3/HBoxContainer" unique_id=625141316 instance=ExtResource("4_aka8n")]
+layout_mode = 2
+link = "https://santimetros.itch.io/"
+
+[node name="Name" type="Label" parent="VBoxContainer/VBoxContainer3/HBoxContainer" unique_id=1109651603]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("3_rber7")
+theme_override_font_sizes/font_size = 8
+text = "Santimetros"
+horizontal_alignment = 1

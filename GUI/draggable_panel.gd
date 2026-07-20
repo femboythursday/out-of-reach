@@ -3,7 +3,10 @@ class_name DraggablePanel
 
 enum PanelType {
 	INVENTORY,
-	CRAFTING
+	CRAFTING,
+	BRIDGE,
+	END,
+	CREDITS
 }
 
 @export var panel_type: PanelType

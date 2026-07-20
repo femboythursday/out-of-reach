@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://6nas3d6lvwvi"]
+
+[ext_resource type="Script" uid="uid://d1inu3rk7uoom" path="res://addons/sprouty_dialogs/nodes/dialog_box.gd" id="1_lovb2"]
+[ext_resource type="FontFile" uid="uid://dteh286g6cn7t" path="res://GUI/fonts/alagard.ttf" id="2_l68hg"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_l68hg"]
+load_path = "res://.godot/imported/fox_portrait.png-9159dadd5fc4f8dcc9b7c8d2c5ca106d.ctex"
+
+[node name="DialogueBox" type="Control" unique_id=1626621241 node_paths=PackedStringArray("dialog_display", "name_display", "continue_indicator", "portrait_display")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lovb2")
+typing_speed = 0.05
+max_characters = 0
+dialog_display = NodePath("PanelContainer/MarginContainer/DialogContainer/DialogDisplay")
+name_display = NodePath("PanelContainer/MarginContainer/DialogContainer/NameDisplay")
+continue_indicator = NodePath("PanelContainer/MarginContainer/DialogContainer/TextureRect")
+portrait_display = NodePath("TextureRect")
+metadata/_custom_type_script = "uid://d1inu3rk7uoom"
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1316192879]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -186.84999
+offset_top = -71.0
+offset_right = -104.0
+offset_bottom = 9.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CompressedTexture2D_l68hg")
+stretch_mode = 5
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1082816602]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -186.85
+offset_top = -126.0
+offset_right = 186.85
+offset_bottom = -14.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=222605046]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="DialogContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=1709994666]
+layout_mode = 2
+
+[node name="NameDisplay" type="RichTextLabel" parent="PanelContainer/MarginContainer/DialogContainer" unique_id=463698730]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("2_l68hg")
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "Name"
+fit_content = true
+
+[node name="DialogDisplay" type="RichTextLabel" parent="PanelContainer/MarginContainer/DialogContainer" unique_id=1078855903]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("2_l68hg")
+bbcode_enabled = true
+text = "Dialog text"
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/DialogContainer" unique_id=717265582]
+layout_mode = 2

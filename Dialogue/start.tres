@@ -1,0 +1,129 @@
+[gd_resource type="Resource" script_class="SproutyDialogsDialogueData" format=3 uid="uid://b1cxc80n1r8l3"]
+
+[ext_resource type="Script" uid="uid://cbjdca3iwlx36" path="res://addons/sprouty_dialogs/resources/dialogue_data.gd" id="1_kuda7"]
+
+[resource]
+script = ExtResource("1_kuda7")
+graph_data = {
+"0": {
+"dialogue_node_1": {
+"char_expand": true,
+"character": "player",
+"dialog_key": "0_DIALOG_1",
+"node_index": 1,
+"node_type": "dialogue_node",
+"offset": Vector2(-20, -2000),
+"portrait": "",
+"size": Vector2(250, 439),
+"to_dialog": "",
+"to_node": ["dialogue_node_2"]
+},
+"dialogue_node_2": {
+"char_expand": true,
+"character": "player",
+"dialog_key": "0_DIALOG_2",
+"node_index": 2,
+"node_type": "dialogue_node",
+"offset": Vector2(400, -1860),
+"portrait": "",
+"size": Vector2(250, 439),
+"to_dialog": "",
+"to_node": ["dialogue_node_3"]
+},
+"dialogue_node_3": {
+"char_expand": true,
+"character": "player",
+"dialog_key": "0_DIALOG_3",
+"node_index": 3,
+"node_type": "dialogue_node",
+"offset": Vector2(840, -1780),
+"portrait": "",
+"size": Vector2(250, 439),
+"to_dialog": "",
+"to_node": ["signal_node_1"]
+},
+"signal_node_1": {
+"extra_args": [],
+"node_index": 1,
+"node_type": "signal_node",
+"offset": Vector2(1253, -1492),
+"signal_id": "start_dialogue_finished",
+"size": Vector2(360, 179),
+"to_dialog": "",
+"to_node": ["END"]
+},
+"start_node_1": {
+"node_index": 1,
+"node_type": "start_node",
+"offset": Vector2(-840, -1980),
+"size": Vector2(180, 97),
+"start_id": "0",
+"to_dialog": "",
+"to_node": ["dialogue_node_1"]
+}
+},
+"1": {
+"call_method_node_1": {
+"autoload": "PlayerHud",
+"method": "end",
+"node_index": 1,
+"node_type": "call_method_node",
+"offset": Vector2(-420, -880),
+"parameters": [],
+"size": Vector2(256, 188),
+"to_dialog": "",
+"to_node": ["END"]
+},
+"dialogue_node_4": {
+"char_expand": true,
+"character": "player",
+"dialog_key": "1_DIALOG_4",
+"node_index": 4,
+"node_type": "dialogue_node",
+"offset": Vector2(-840, -1060),
+"portrait": "",
+"size": Vector2(250, 439),
+"to_dialog": "",
+"to_node": ["call_method_node_1"]
+},
+"start_node_2": {
+"node_index": 2,
+"node_type": "start_node",
+"offset": Vector2(-1160, -1100),
+"size": Vector2(200, 77),
+"start_id": "1",
+"to_dialog": "",
+"to_node": ["dialogue_node_4"]
+}
+}
+}
+dialogs = {
+"0_DIALOG_1": {
+"default": "The witch said I can get the herbs for the potion from Torga Town!
+
+The bridge should be right here...",
+"en": ""
+},
+"0_DIALOG_2": {
+"default": "AH! The bridge is broken?!?! It's just out of reach!",
+"en": ""
+},
+"0_DIALOG_3": {
+"default": "Hmmm... I'll have to fix it myself. There should be enough wood and flax around here...
+
+(Left click to gather resources!)",
+"en": ""
+},
+"1_DIALOG_4": {
+"default": "I did it! Now to find those herbs...",
+"en": ""
+}
+}
+characters = {
+"0": {
+"player": 7551662606626765054
+},
+"1": {
+"player": 7551662606626765054
+}
+}

@@ -1,0 +1,115 @@
+[gd_scene format=3 uid="uid://hc3c1v4f4fa4"]
+
+[ext_resource type="Theme" uid="uid://xavw04atwuaq" path="res://GUI/panel_theme.tres" id="1_bo63f"]
+[ext_resource type="Script" uid="uid://bubx4cr7m4jsp" path="res://GUI/draggable_panel.gd" id="2_c15x1"]
+[ext_resource type="Texture2D" uid="uid://bra6ulmr63cjx" path="res://GUI/sprites/fbt_watermark.png" id="3_bo63f"]
+[ext_resource type="FontFile" uid="uid://dteh286g6cn7t" path="res://GUI/fonts/alagard.ttf" id="3_p5h5h"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jrx5n"]
+load_path = "res://.godot/imported/TravelBook_Spritesheet_v1.png-af3dcc418eb5ec6d3738d8967f93899e.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_563m5"]
+atlas = SubResource("CompressedTexture2D_jrx5n")
+region = Rect2(64, 32, 224, 160)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xudqb"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+texture = SubResource("AtlasTexture_563m5")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4geva"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qigre"]
+load_path = "res://.godot/imported/TravelBook_Spritesheet_v1.png-af3dcc418eb5ec6d3738d8967f93899e.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xudqb"]
+atlas = SubResource("CompressedTexture2D_qigre")
+region = Rect2(256, 688, 16, 16)
+
+[node name="EndPanel" type="PanelContainer" unique_id=1894795615 node_paths=PackedStringArray("drag_button", "close_button")]
+custom_minimum_size = Vector2(108, 55)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -140.0
+offset_top = -71.0
+offset_right = 140.0
+offset_bottom = 71.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("1_bo63f")
+theme_override_styles/panel = SubResource("StyleBoxTexture_xudqb")
+script = ExtResource("2_c15x1")
+panel_type = 3
+drag_button = NodePath("DragButton")
+close_button = NodePath("CloseButton")
+
+[node name="DragButton" type="Button" parent="." unique_id=1650174691]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4geva")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_4geva")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_4geva")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4geva")
+
+[node name="CloseButton" type="TextureButton" parent="." unique_id=1962333611]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+offset_transform_enabled = true
+texture_normal = SubResource("AtlasTexture_xudqb")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=580101295]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer" unique_id=451468831]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("3_bo63f")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=1727936168]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=1048612041]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_p5h5h")
+text = "Thanks for playing!"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=689609266]
+custom_minimum_size = Vector2(192, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_p5h5h")
+theme_override_font_sizes/font_size = 8
+text = "This game is a prototype of the crafting system for a larger project (made entirely during the jam) named Runecursed. 
+
+It will be a skilling RPG inspired by Runescape, and I will be releasing a demo next month. 
+
+Please let me know if you have any feedback!
+
+- Femboy <3"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="HBoxContainer" unique_id=672366244]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("3_bo63f")
+expand_mode = 2
+stretch_mode = 4

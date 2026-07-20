@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://bn8he1dp63ifc" path="res://GUI/sprites/fa2.png" id="7_nqswu"]
 [ext_resource type="PackedScene" uid="uid://cc6bhxrmndgyd" path="res://GUI/bridge_panel.tscn" id="8_fo3ry"]
 [ext_resource type="Texture2D" uid="uid://c7dm1phr1kf14" path="res://GUI/sprites/fa126.png" id="8_sg3wf"]
+[ext_resource type="PackedScene" uid="uid://hc3c1v4f4fa4" path="res://GUI/end_panel.tscn" id="9_vql8t"]
+[ext_resource type="PackedScene" uid="uid://clhfhsov2csje" path="res://GUI/credits_panel.tscn" id="10_4geva"]
 
 [node name="PlayerHUD" type="CanvasLayer" unique_id=500084994]
 process_mode = 3
@@ -38,12 +40,16 @@ item_count = 3
 popup/item_0/text = "Inventory"
 popup/item_0/icon = ExtResource("6_4geva")
 popup/item_0/id = 0
-popup/item_1/text = "Settings"
-popup/item_1/icon = ExtResource("7_nqswu")
-popup/item_1/id = 1
-popup/item_2/text = "Crafting"
-popup/item_2/icon = ExtResource("8_sg3wf")
-popup/item_2/id = 2
+popup/item_1/text = "Crafting"
+popup/item_1/icon = ExtResource("8_sg3wf")
+popup/item_1/id = 2
+popup/item_2/text = "Credits"
+popup/item_2/icon = ExtResource("7_nqswu")
+popup/item_2/id = 1
+
+[node name="CraftingPanel" parent="Control" unique_id=1127279965 instance=ExtResource("7_fo3ry")]
+visible = false
+layout_mode = 1
 
 [node name="InventoryPanel" parent="Control" unique_id=1894795615 instance=ExtResource("6_dqwrq")]
 visible = false
@@ -53,11 +59,26 @@ offset_top = 0.0
 offset_right = 108.0
 offset_bottom = 55.0
 
-[node name="CraftingPanel" parent="Control" unique_id=1127279965 instance=ExtResource("7_fo3ry")]
+[node name="BridgePanel" parent="Control" unique_id=806351806 instance=ExtResource("8_fo3ry")]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -107.0
+offset_top = -49.0
+offset_right = 107.0
+offset_bottom = 49.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="EndPanel" parent="Control" unique_id=410104314 instance=ExtResource("9_vql8t")]
 visible = false
 layout_mode = 1
 
-[node name="BridgePanel" parent="Control" unique_id=806351806 instance=ExtResource("8_fo3ry")]
+[node name="CreditsPanel" parent="Control" unique_id=671061710 instance=ExtResource("10_4geva")]
 visible = false
 layout_mode = 1
 anchors_preset = 8

@@ -62,6 +62,7 @@ mouse_filter = 2
 theme = ExtResource("1_0sq21")
 theme_override_styles/panel = SubResource("StyleBoxTexture_xudqb")
 script = ExtResource("2_jrqb3")
+panel_type = 2
 drag_button = NodePath("DragButton")
 close_button = NodePath("CloseButton")
 

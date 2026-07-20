@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://6jasw7xuc8rc"]
+
+[ext_resource type="Texture2D" uid="uid://nmom45gmijev" path="res://GUI/sprites/Icons_Platforms.png" id="1_larhv"]
+[ext_resource type="Script" uid="uid://g2w73lxkpi23" path="res://GUI/link_button.gd" id="2_4d62h"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2okpv"]
+atlas = ExtResource("1_larhv")
+region = Rect2(0, 32, 16, 16)
+
+[node name="LinkButton" type="TextureButton" unique_id=1512672953]
+texture_normal = SubResource("AtlasTexture_2okpv")
+script = ExtResource("2_4d62h")

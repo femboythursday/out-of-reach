@@ -47,24 +47,19 @@ func slot_changed() -> void:
 				slots[index] = null
 				emit_changed()
 
-func use_item(item: ItemData, count: int = 1) -> bool:
-	for s in slots:
-		if s:
-			if s.item_data == item:
-				if s.quantity >= count:
-					s.quantity -= count
-					print(item.name, " removed")
-					return true
-	print("use_item failed!")
-	return false
-
-func remove_item(item: ItemData) -> void:
+func remove_item(item: ItemData, count: int = 1) -> void:
 	for s in slots:
 		if s.item_data == item:
-			s.quantity -= 1
+			s.quantity -= count
 			if s.quantity < 1:
 				s.item_data = null
-			print_slots()
+
+func get_held_item_count(item: ItemData) -> int:
+	var count: int = 0
+	for s in slots:
+		if s.item_data && s.item_data == item:
+			count += s.quantity
+	return count
 
 func print_slots() -> void:
 	for s in slots:

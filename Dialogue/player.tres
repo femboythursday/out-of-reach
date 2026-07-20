@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="SproutyDialogsCharacterData" format=3 uid="uid://dfuc1rqa1medi"]
+
+[ext_resource type="Script" uid="uid://ygs6blymsjbh" path="res://addons/sprouty_dialogs/resources/portrait_data.gd" id="1_ppsn6"]
+[ext_resource type="Script" uid="uid://kwoapf8il7ee" path="res://addons/sprouty_dialogs/resources/character_data.gd" id="1_tpbkk"]
+
+[sub_resource type="Resource" id="Resource_ppsn6"]
+script = ExtResource("1_ppsn6")
+typing_sound = {}
+
+[resource]
+script = ExtResource("1_tpbkk")
+key_name = "player"
+display_name = {
+"default": "Fox",
+"en": ""
+}
+dialog_box_uid = 2202724684584335778
+dialog_box_path = "res://Dialogue/dialogue_box.tscn"
+portrait_on_dialog_box = true
+portraits = {
+"Player": {
+"data": SubResource("Resource_ppsn6"),
+"index": 0
+}
+}
