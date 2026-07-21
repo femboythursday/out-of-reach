@@ -23,6 +23,9 @@ func fix_bridge() -> void:
 	fixed.show()
 	PlayerHud.bridge_panel.queue_free()
 	anim.play("fixed")
+	Player.inventory.remove_item(plank, 3)
+	Player.inventory.remove_item(rope, 3)
+	PlayerHud.inventory_shown.emit()
 
 func _area_entered(_a: Node2D) -> void:
 	GameManager.interact_pressed.connect(_player_interact)
@@ -37,5 +40,3 @@ func _player_interact() -> void:
 	PlayerHud.bridge_panel.show()
 	if Player.inventory.get_held_item_count(plank) >= 3 && Player.inventory.get_held_item_count(rope) >= 3:
 		PlayerHud.bridge_can_be_fixed.emit()
-		Player.inventory.remove_item(plank, 3)
-		Player.inventory.remove_item(rope, 3)

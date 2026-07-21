@@ -12,24 +12,15 @@ func add_item(item: ItemData, count: int = 1) -> bool:
 			if s.item_data == item:
 				s.quantity += count
 				PlayerHud.inventory_shown.emit()
-				print("item added to stack: ", s.item_data.name)
 				return true
-			elif s.item_data && s.item_data != item:
-				continue
-			else:
-				s.item_data = item
-				s.quantity = count
-				PlayerHud.inventory_shown.emit()
-				print("new item added: ", s.item_data.name)
-				return true
-		else:
-			var new = SlotData.new()
-			new.item_data = item
-			new.quantity = count
-			s = new
-			new.changed.connect(slot_changed)
-			print("new slot added: ", s.item_data.name)
+	
+	for s in slots:
+		if !s.item_data:
+			s.item_data = item
+			s.quantity = count
+			PlayerHud.inventory_shown.emit()
 			return true
+	
 	push_error("add_item() failed!")
 	return false
 

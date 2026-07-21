@@ -48,7 +48,7 @@ graph_data = {
 "node_type": "signal_node",
 "offset": Vector2(1253, -1492),
 "signal_id": "start_dialogue_finished",
-"size": Vector2(360, 179),
+"size": Vector2(360, 44),
 "to_dialog": "",
 "to_node": ["END"]
 },
@@ -70,7 +70,7 @@ graph_data = {
 "node_type": "call_method_node",
 "offset": Vector2(-420, -880),
 "parameters": [],
-"size": Vector2(256, 188),
+"size": Vector2(256, 44),
 "to_dialog": "",
 "to_node": ["END"]
 },
@@ -90,7 +90,7 @@ graph_data = {
 "node_index": 2,
 "node_type": "start_node",
 "offset": Vector2(-1160, -1100),
-"size": Vector2(200, 77),
+"size": Vector2(200, 46),
 "start_id": "1",
 "to_dialog": "",
 "to_node": ["dialogue_node_4"]
@@ -99,22 +99,26 @@ graph_data = {
 }
 dialogs = {
 "0_DIALOG_1": {
+"": "",
 "default": "The witch said I can get the herbs for the potion from Torga Town!
 
 The bridge should be right here...",
 "en": ""
 },
 "0_DIALOG_2": {
+"": "",
 "default": "AH! The bridge is broken?!?! It's just out of reach!",
 "en": ""
 },
 "0_DIALOG_3": {
+"": "",
 "default": "Hmmm... I'll have to fix it myself. There should be enough wood and flax around here...
 
 (Left click to gather resources!)",
 "en": ""
 },
 "1_DIALOG_4": {
+"": "",
 "default": "I did it! Now to find those herbs...",
 "en": ""
 }
